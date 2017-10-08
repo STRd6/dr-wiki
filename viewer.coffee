@@ -90,6 +90,8 @@ module.exports = ({application, system}) ->
     """
     handlers: handlers
 
+  document.body.appendChild menuBar.element
+
   document.addEventListener "keydown", (e) ->
     {key} = e
 
