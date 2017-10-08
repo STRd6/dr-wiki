@@ -20,7 +20,7 @@
     },
     "pixie.cson": {
       "path": "pixie.cson",
-      "content": "version: \"0.1.0\"\ndependencies:\n  sys: \"STRd6/system-client:master\"\npublish:\n  s3:\n    basePath: \"public/danielx.net\"\n",
+      "content": "version: \"0.1.0\"\npublish:\n  s3:\n    basePath: \"public/danielx.net\"\ndependencies:\n  sys: \"STRd6/system-client:master\"\nremoteDependencies: [\n  \"https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.min.js\"\n]\n",
       "mode": "100644",
       "type": "blob"
     },
@@ -55,7 +55,7 @@
     },
     "pixie": {
       "path": "pixie",
-      "content": "module.exports = {\"version\":\"0.1.0\",\"dependencies\":{\"sys\":\"STRd6/system-client:master\"},\"publish\":{\"s3\":{\"basePath\":\"public/danielx.net\"}}};",
+      "content": "module.exports = {\"version\":\"0.1.0\",\"publish\":{\"s3\":{\"basePath\":\"public/danielx.net\"}},\"dependencies\":{\"sys\":\"STRd6/system-client:master\"},\"remoteDependencies\":[\"https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.min.js\"]};",
       "type": "blob"
     },
     "util": {
@@ -79,17 +79,23 @@
   },
   "config": {
     "version": "0.1.0",
-    "dependencies": {
-      "sys": "STRd6/system-client:master"
-    },
     "publish": {
       "s3": {
         "basePath": "public/danielx.net"
       }
-    }
+    },
+    "dependencies": {
+      "sys": "STRd6/system-client:master"
+    },
+    "remoteDependencies": [
+      "https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.min.js"
+    ]
   },
   "version": "0.1.0",
   "entryPoint": "main",
+  "remoteDependencies": [
+    "https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.min.js"
+  ],
   "repository": {
     "branch": "master",
     "default_branch": "master",
