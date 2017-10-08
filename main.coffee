@@ -1,5 +1,5 @@
 SystemClient = require "sys"
-
+SystemClient.applyExtensions()
 SystemClient()
 .then ({system, application}) ->
   global.system = system
