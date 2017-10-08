@@ -1,0 +1,6 @@
+version: "0.1.0"
+dependencies:
+  sys: "STRd6/system-client:master"
+publish:
+  s3:
+    basePath: "public/danielx.net"
