@@ -1,6 +1,9 @@
 version: "0.1.0"
-dependencies:
-  sys: "STRd6/system-client:master"
 publish:
   s3:
     basePath: "public/danielx.net"
+dependencies:
+  sys: "STRd6/system-client:master"
+remoteDependencies: [
+  "https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.min.js"
+]
