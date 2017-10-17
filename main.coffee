@@ -14,4 +14,7 @@ viewElement = Viewer({system, application})
 
 postmaster.delegate = viewElement.handlers
 
+system.ready()
+.then ->
+
 document.body.appendChild viewElement
