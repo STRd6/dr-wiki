@@ -199,7 +199,7 @@
     },
     "main.coffee": {
       "path": "main.coffee",
-      "content": "style = document.createElement \"style\"\nstyle.innerHTML = require \"./style\"\ndocument.head.appendChild style\n\nSystemClient = require \"sys\"\nSystemClient.applyExtensions()\n{system, application, postmaster} = SystemClient()\n\n{UI, Observable} = system\n{Modal} = UI\n\nViewer = require \"./viewer\"\nviewElement = Viewer({system, application})\n\npostmaster.delegate = viewElement.handlers\n\ndocument.body.appendChild viewElement\n",
+      "content": "style = document.createElement \"style\"\nstyle.innerHTML = require \"./style\"\ndocument.head.appendChild style\n\nSystemClient = require \"sys\"\nSystemClient.applyExtensions()\n{system, application, postmaster} = SystemClient()\n\n{UI, Observable} = system\n{Modal} = UI\n\nViewer = require \"./viewer\"\nviewElement = Viewer({system, application})\n\npostmaster.delegate = viewElement.handlers\n\nsystem.ready()\n.then ->\n\ndocument.body.appendChild viewElement\n",
       "mode": "100644",
       "type": "blob"
     },
@@ -236,7 +236,7 @@
     },
     "main": {
       "path": "main",
-      "content": "(function() {\n  var Modal, Observable, SystemClient, UI, Viewer, application, postmaster, style, system, viewElement, _ref;\n\n  style = document.createElement(\"style\");\n\n  style.innerHTML = require(\"./style\");\n\n  document.head.appendChild(style);\n\n  SystemClient = require(\"sys\");\n\n  SystemClient.applyExtensions();\n\n  _ref = SystemClient(), system = _ref.system, application = _ref.application, postmaster = _ref.postmaster;\n\n  UI = system.UI, Observable = system.Observable;\n\n  Modal = UI.Modal;\n\n  Viewer = require(\"./viewer\");\n\n  viewElement = Viewer({\n    system: system,\n    application: application\n  });\n\n  postmaster.delegate = viewElement.handlers;\n\n  document.body.appendChild(viewElement);\n\n}).call(this);\n",
+      "content": "(function() {\n  var Modal, Observable, SystemClient, UI, Viewer, application, postmaster, style, system, viewElement, _ref;\n\n  style = document.createElement(\"style\");\n\n  style.innerHTML = require(\"./style\");\n\n  document.head.appendChild(style);\n\n  SystemClient = require(\"sys\");\n\n  SystemClient.applyExtensions();\n\n  _ref = SystemClient(), system = _ref.system, application = _ref.application, postmaster = _ref.postmaster;\n\n  UI = system.UI, Observable = system.Observable;\n\n  Modal = UI.Modal;\n\n  Viewer = require(\"./viewer\");\n\n  viewElement = Viewer({\n    system: system,\n    application: application\n  });\n\n  postmaster.delegate = viewElement.handlers;\n\n  system.ready().then(function() {});\n\n  document.body.appendChild(viewElement);\n\n}).call(this);\n",
       "type": "blob"
     },
     "pixie": {
