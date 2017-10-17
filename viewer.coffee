@@ -123,4 +123,6 @@ module.exports = ({application, system}) ->
           lastPath = navigationStack.pop()
           navigateToPath(lastPath)
 
+  container.handlers = handlers
+
   return container

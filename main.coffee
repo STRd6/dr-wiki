@@ -12,5 +12,6 @@ SystemClient.applyExtensions()
 Viewer = require "./viewer"
 viewElement = Viewer({system, application})
 
-document.body.appendChild viewElement
+postmaster.delegate = viewElement.handlers
 
+document.body.appendChild viewElement
