@@ -6,7 +6,7 @@
 #     current application state.
 #   `newFile` Initialize the application to an empty state.
 
-module.exports = (I, self={}) ->
+module.exports = (system) ->
   {Observable} = system
   {Modal} = system.UI
 
@@ -24,7 +24,7 @@ module.exports = (I, self={}) ->
         else
           reject()
 
-  Object.assign self,
+  self =
     currentPath: currentPath
     saved: saved
     new: ->

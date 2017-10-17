@@ -8,7 +8,6 @@ isRelative = (url) ->
   url.match /^\.\.?\//
 
 module.exports = ({application, system}) ->
-  # Global system
   {ContextMenu, MenuBar, Modal, Progress, Util:{parseMenu}, Window} = system.UI
 
   container = document.createElement 'container'
@@ -46,7 +45,7 @@ module.exports = ({application, system}) ->
         .then (url) ->
           img.src = url
 
-  handlers = Object.assign FileIO(),
+  handlers = Object.assign FileIO(system),
     loadFile: (blob, path) ->
       navigationStack.push path
       baseDir = path.replace /\/[^/]*$/, ""
@@ -120,7 +119,7 @@ module.exports = ({application, system}) ->
         e.preventDefault()
         if navigationStack.length > 1
           navigationStack.pop()
-  
+
           lastPath = navigationStack.pop()
           navigateToPath(lastPath)
 
